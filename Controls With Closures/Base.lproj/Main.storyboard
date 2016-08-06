@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K6c-ca-I7T">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="k9f-dA-uBU">
+            <objects>
+                <tableViewController id="K6c-ca-I7T" customClass="TableViewController" customModule="Controls_With_Closures" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yFB-s9-zNI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="0Bj-vV-4gH" customClass="TableViewCell" customModule="Controls_With_Closures" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Bj-vV-4gH" id="5EX-85-sEY">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdR-oA-A2E">
+                                            <rect key="frame" x="8" y="11" width="473" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rd-Ll-Lxs">
+                                            <rect key="frame" x="489" y="7" width="53" height="30"/>
+                                            <state key="normal" title="Regular"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XE-9K-HZV" customClass="Button" customModule="Controls_With_Closures" customModuleProvider="target">
+                                            <rect key="frame" x="550" y="7" width="42" height="30"/>
+                                            <state key="normal" title="Smart"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5rd-Ll-Lxs" firstAttribute="leading" secondItem="LdR-oA-A2E" secondAttribute="trailing" constant="8" id="K6d-oD-QHp"/>
+                                        <constraint firstAttribute="trailing" secondItem="5XE-9K-HZV" secondAttribute="trailing" constant="8" id="OSk-qK-UN3"/>
+                                        <constraint firstItem="5rd-Ll-Lxs" firstAttribute="centerY" secondItem="5EX-85-sEY" secondAttribute="centerY" id="V1E-Zu-PEc"/>
+                                        <constraint firstItem="5XE-9K-HZV" firstAttribute="leading" secondItem="5rd-Ll-Lxs" secondAttribute="trailing" constant="8" id="gFq-W1-KEa"/>
+                                        <constraint firstItem="LdR-oA-A2E" firstAttribute="centerY" secondItem="5EX-85-sEY" secondAttribute="centerY" id="gPt-qn-PCx"/>
+                                        <constraint firstItem="LdR-oA-A2E" firstAttribute="leading" secondItem="5EX-85-sEY" secondAttribute="leading" constant="8" id="mSR-E2-iMT"/>
+                                        <constraint firstItem="5XE-9K-HZV" firstAttribute="centerY" secondItem="5EX-85-sEY" secondAttribute="centerY" id="meo-mf-w2w"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="button" destination="5rd-Ll-Lxs" id="WYm-jS-kbE"/>
+                                    <outlet property="mainLabel" destination="LdR-oA-A2E" id="kYH-cY-FYn"/>
+                                    <outlet property="smartButton" destination="5XE-9K-HZV" id="bgD-t2-9wg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="K6c-ca-I7T" id="8dM-L8-Kx0"/>
+                            <outlet property="delegate" destination="K6c-ca-I7T" id="Rjn-iK-hK8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTu-kg-mMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="439"/>
+        </scene>
+    </scenes>
+</document>
