@@ -15,16 +15,16 @@ class Button: UIButton {
     var didTouchUpInside: DidTapButton? {
         didSet {
             if didTouchUpInside != nil {
-                addTarget(self, action: #selector(didTouchUpInside(_:)), forControlEvents: .TouchUpInside)
+                addTarget(self, action: #selector(didTouchUpInside(_:)), for: .touchUpInside)
             } else {
-                removeTarget(self, action: #selector(didTouchUpInside(_:)), forControlEvents: .TouchUpInside)
+                removeTarget(self, action: #selector(didTouchUpInside(_:)), for: .touchUpInside)
             }
         }
     }
 
     // MARK: - Actions
 
-    func didTouchUpInside(sender: UIButton) {
+    func didTouchUpInside(_ sender: UIButton) {
         if let handler = didTouchUpInside {
             handler(self)
         }

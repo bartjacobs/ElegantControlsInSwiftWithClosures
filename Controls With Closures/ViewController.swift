@@ -17,12 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        button.addTarget(self, action: #selector(didTapButton(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
     }
 
     // MARK: - Actions
 
-    @IBAction func didTapButton(sender: UIButton) {
+    @IBAction func didTapButton(_ sender: UIButton) {
         
     }
 

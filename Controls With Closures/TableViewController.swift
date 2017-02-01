@@ -22,11 +22,11 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table View Data Source Methods
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
 
@@ -47,14 +47,14 @@ class TableViewController: UITableViewController {
     }
     */
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCellWithIdentifier(tableViewCell, forIndexPath: indexPath) as? TableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCell, for: indexPath) as? TableViewCell {
             // Fetch Item
             let item = items[indexPath.row]
 
             // Configure Cell
             cell.mainLabel.text = item
-            cell.button.addTarget(self, action: #selector(didTapButton(_:)), forControlEvents: .TouchUpInside)
+            cell.button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
 
             cell.smartButton.didTouchUpInside = { (sender) in
                 print(item)
@@ -63,15 +63,15 @@ class TableViewController: UITableViewController {
             return cell
         }
         
-        return UITableViewCell(style: .Default, reuseIdentifier: nil)
+        return UITableViewCell(style: .default, reuseIdentifier: nil)
     }
 
     // MARK: - Actions
     
-    func didTapButton(sender: UIButton) {
+    func didTapButton(_ sender: UIButton) {
         // Fetch Item
         if let superview = sender.superview, let cell = superview.superview as? TableViewCell {
-            if let indexPath = tableView.indexPathForCell(cell) {
+            if let indexPath = tableView.indexPath(for: cell) {
                 let item = items[indexPath.row]
                 print(item)
             }
@@ -80,7 +80,7 @@ class TableViewController: UITableViewController {
 
     // MARK: - Helper Methods
 
-    private func setupTableView() {
+    fileprivate func setupTableView() {
         tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
     }
     
